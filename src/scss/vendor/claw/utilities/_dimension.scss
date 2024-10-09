@@ -1,0 +1,35 @@
+@each $dimension, $value in $dimensions {
+    .w {
+        &-#{$dimension} {
+            width: #{$value} !important;
+        }
+    }
+    .h {
+        &-#{$dimension} {
+            height: #{$value} !important;
+        }
+    }
+}
+
+@each $breakpointclass, $bpc in $breakpointclasses {
+    @each $dimension, $value in $dimensions {
+        .w {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    &-#{$dimension} {
+                        width: #{$value} !important;
+                    }
+                }
+            }
+        }
+        .h {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    &-#{$dimension} {
+                        height: #{$value} !important;
+                    }
+                }
+            }
+        }
+    }
+}

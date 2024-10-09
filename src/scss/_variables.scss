@@ -1,0 +1,32 @@
+:root {
+  color-scheme: light dark;
+  --grey-100: #f7f7f8;
+  --grey-100-rgb: 247, 247, 248;
+  --grey-200: #e7e9eb;
+  --grey-200-rgb: 231, 233, 235;
+  --grey-300: #d2d6da;
+  --grey-300-rgb: 210, 214, 218;
+  --grey-400: #9fa6ad;
+  --grey-400-rgb: 159, 166, 173;
+  --grey-500: #6e7881;
+  --grey-500-rgb: 110, 120, 129;
+  --grey-600: #51585f;
+  --grey-600-rgb: 81, 88, 95;
+  --grey-700: #3f4449;
+  --grey-700-rgb: 63, 68, 73;
+  --grey-800: #2a2d2f;
+  --grey-800-rgb: 42, 45, 47;
+  --grey-900: #222222;
+  --grey-900-rgb: 34, 34, 34;
+}
+
+// grey palette
+$grey-100: #f7f7f8;
+$grey-200: #e7e9eb;
+$grey-300: #d2d6da;
+$grey-400: #9fa6ad;
+$grey-500: #6e7881;
+$grey-600: #51585f;
+$grey-700: #3f4449;
+$grey-800: #2a2d2f;
+$grey-900: #222222;
