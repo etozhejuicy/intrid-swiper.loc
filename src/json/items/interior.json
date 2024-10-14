@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Заголовок интерьера",
+        "link": "./items/interior/1.png",
+        "brief": "Краткое описание интерьера",
+        "type": "interior"
+    },
+    {
+        "title": "Заголовок интерьера",
+        "link": "./items/interior/2.png",
+        "brief": "Краткое описание интерьера",
+        "type": "interior"
+    },
+    {
+        "title": "Заголовок интерьера",
+        "link": "./items/interior/3.png",
+        "brief": "Краткое описание интерьера",
+        "type": "interior"
+    },
+    {
+        "title": "Заголовок интерьера",
+        "link": "./items/interior/4.png",
+        "brief": "Краткое описание интерьера",
+        "type": "interior"
+    }
+]

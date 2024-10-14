@@ -1,8 +1,8 @@
 // styles
 import "../../src/scss/app.scss";
 
-import "./modules/jquery.module.js";
-import "./modules/wow.module.js";
+import "./modules/jquery.js";
+import "./modules/wow.js";
 
 import lazySizes from "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
