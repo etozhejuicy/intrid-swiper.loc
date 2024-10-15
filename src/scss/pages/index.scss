@@ -4,90 +4,128 @@
 @import "../parts/tabs";
 
 :root {
-    --section-view-gap: 1.5rem;
-    --preview-item-size: 6.25rem;
-    --preview-item-rounded: 0.5rem;
+  --section-view-gap: 1.5rem;
+  --preview-item-size: 6.25rem;
+  --preview-item-rounded: 0.5rem;
 }
 
 body {
-    color: var(--white);
-    background-color: var(--black);
+  color: var(--white);
+  background-color: var(--black);
 }
 
 .section-view {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  &-inner {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    height: 100svh;
-    &-inner {
-        display: flex;
-        flex-direction: column;
-        row-gap: var(--section-view-gap);
-        column-gap: var(--section-view-gap);
-        flex: 1;
-        max-height: 100%;
-        max-height: 100%;
-    }
-    &-tabs {
-        flex: 0;
-        height: 5%;
-    }
-    &-content {
-        flex: 1;
-        height: 75%;
-    }
-    &-navigate {
-        flex: 0;
-        height: 20%;
-    }
+    row-gap: var(--section-view-gap);
+    column-gap: var(--section-view-gap);
+    flex: 1;
+    max-height: 100%;
+    max-height: 100%;
+  }
+  &-tabs {
+    flex: 0;
+    // height: 5%;
+  }
+  &-content {
+    flex: 1;
+    height: 70%;
+  }
+  &-navigate {
+    flex: 0;
+    // height: 20%;
+  }
 }
 
 .swiper-gallery {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  & .swiper-wrapper {
+    flex: 1;
+    width: 1000vw;
     width: 100%;
     height: 100%;
-    & .swiper-wrapper {
-        flex: 1;
-        width: 1000vw;
-        width: 100%;
-        height: 100%;
-    }
-    & .swiper-slide,
-    & swiper-slide {
-        display: flex;
-        flex-direction: column;
-        width: 100% !important;
-        height: 100% !important;
-        min-height: 100%;
-    }
+  }
+  & .swiper-slide,
+  & swiper-slide {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+  }
 }
 
 .swiper-thumbs {
-    position: relative;
-    z-index: 1;
-    // padding: 0 calc(2.5rem * 1.5);
-    & .swiper-slide,
-    & swiper-slide {
-        display: flex;
-        flex-direction: column;
-        width: auto !important;
-        border-radius: var(--preview-item-rounded);
-        &-active {
-            box-shadow: 0 0 0 0.125rem rgba(var(--white-rgb), 0.5);
-        }
+  position: relative;
+  z-index: 1;
+  // padding: 0 calc(2.5rem * 1.5);
+  & .swiper-slide,
+  & swiper-slide {
+    display: flex;
+    flex-direction: column;
+    width: auto !important;
+    border-radius: var(--preview-item-rounded);
+    &-active {
+      box-shadow: 0 0 0 0.125rem rgba(var(--white-rgb), 0.75);
     }
+  }
+  & .swiper-button-prev,
+  & .swiper-button-next {
+    --swiper-navigation-sides-offset: 0;
+    --swiper-navigation-size: var(--preview-item-size);
+    --swiper-navigation-color: var(--white);
+    --swiper-navigation-bg: rgba(var(--grey-900-rgb), 1);
+    width: 2.5rem;
+    height: var(--preview-item-size);
+    background-color: var(--swiper-navigation-bg);
+    border-radius: var(--preview-item-rounded);
+    padding: 0;
+    border: none;
+    outline: none;
+    appearance: none;
+    transition: 0.35s ease;
+    &:hover {
+      --swiper-navigation-bg: rgba(var(--grey-400-rgb), 1);
+    }
+    &::after {
+      font-size: inherit;
+      font-weight: 900;
+    }
+  }
 }
 
 .swiper-tabs {
-    position: relative;
-    z-index: 1;
-    & .swiper-wrapper {
-        justify-content: stretch;
+  position: relative;
+  z-index: 1;
+  & .swiper-wrapper {
+    justify-content: space-between;
+  }
+  & .swiper-slide {
+    width: 25%;
+    flex: 1 0 auto;
+    &-active {
+      & .swiper-tab {
+        border-bottom-width: 0.125rem;
+        border-bottom-style: solid;
+        border-bottom-color: var(--white);
+        &-green {
+          color: var(--green);
+          border-bottom-color: var(--green);
+        }
+      }
     }
-    & .swiper-slide {
-        flex: 1;
+    & .swiper-tab {
+      padding: 0.625rem 0.25rem;
     }
+  }
 }
