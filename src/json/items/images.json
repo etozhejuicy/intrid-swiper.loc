@@ -3,24 +3,28 @@
         "title": "Заголовок фото",
         "link": "./items/image/1.png",
         "brief": "Краткое описание фото",
-        "type": "image"
+        "type": "image",
+        "typeName": "Фото"
     },
     {
         "title": "Заголовок фото",
         "link": "./items/image/2.png",
         "brief": "Краткое описание фото",
-        "type": "image"
+        "type": "image",
+        "typeName": "Фото"
     },
     {
         "title": "Заголовок фото",
         "link": "./items/image/3.png",
         "brief": "Краткое описание фото",
-        "type": "image"
+        "type": "image",
+        "typeName": "Фото"
     },
     {
         "title": "Заголовок фото",
         "link": "./items/image/4.png",
         "brief": "Краткое описание фото",
-        "type": "image"
+        "type": "image",
+        "typeName": "Фото"
     }
 ]

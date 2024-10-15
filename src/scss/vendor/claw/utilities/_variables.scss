@@ -22,7 +22,7 @@ $breakpoints: (
   "breakpoint-lg": 992px,
   "breakpoint-xl": 1200px,
   "breakpoint-xxl": 1400px,
-  "breakpoint-xxxl": 1600px,
+  "breakpoint-xxxl": 1600px
 );
 // Breakpoints
 
@@ -42,12 +42,12 @@ $breakpointclasses: (
   "breakpointclass-lg": "lg",
   "breakpointclass-xl": "xl",
   "breakpointclass-xxl": "xxl",
-  "breakpointclass-xxxl": "xxxl",
+  "breakpointclass-xxxl": "xxxl"
 );
 // Breakpoints class
 
 // responsive
-$r-xs: 375;
+$r-xs: 482;
 $r-sm: 576;
 $r-md: 768;
 $r-lg: 992;
@@ -60,7 +60,7 @@ $responsives: (
   $r-md: 768,
   $r-lg: 992,
   $r-xl: 1440,
-  $r-xxxl: 1600,
+  $r-xxxl: 1600
 );
 // responsive
 
@@ -72,7 +72,7 @@ $border-3: 0.25rem;
 $borders: (
   $border-1: "1",
   $border-2: "2",
-  $border-3: "3",
+  $border-3: "3"
 );
 
 $border-none: none;
@@ -86,7 +86,7 @@ $borderStyles: (
   $border-solid: "solid",
   $border-dotted: "dotted",
   $border-dashed: "dashed",
-  $border-double: "double",
+  $border-double: "double"
 );
 // borders
 
@@ -94,13 +94,13 @@ $borderStyles: (
 $col-auto: auto;
 
 $cols: (
-  $col-auto: "auto",
+  $col-auto: "auto"
 );
 
 $row-col-auto: auto;
 
 $row-cols: (
-  $row-col-auto: "auto",
+  $row-col-auto: "auto"
 );
 
 $gutter-0: 0rem;
@@ -116,7 +116,7 @@ $gutters: (
   $gutter-2: "2",
   $gutter-3: "3",
   $gutter-4: "4",
-  $gutter-5: "5",
+  $gutter-5: "5"
 );
 // cols
 
@@ -174,7 +174,7 @@ $dimensions: (
   $dimension-fit: fit-content,
   $dimension-fill: fill-available,
   $dimension-min: min-content,
-  $dimension-max: max-content,
+  $dimension-max: max-content
 );
 // dimensions
 
@@ -204,7 +204,7 @@ $displays: (
   $display-table: "table",
   $display-table-row: "table-row",
   $display-table-cell: "table-cell",
-  $display-none: "none",
+  $display-none: "none"
 );
 // display
 
@@ -226,27 +226,27 @@ $flex-directions: (
   $flex-row: "row",
   $flex-column: "column",
   $flex-row-reverse: "row-reverse",
-  $flex-column-reverse: "column-reverse",
+  $flex-column-reverse: "column-reverse"
 );
 
 $flex-wraps: (
   $flex-wrap: "wrap",
   $flex-nowrap: "nowrap",
-  $flex-wrap-reverse: "wrap-reverse",
+  $flex-wrap-reverse: "wrap-reverse"
 );
 
 $flex-grows: (
   $flex-grow-0: "0",
-  $flex-grow-1: "1",
+  $flex-grow-1: "1"
 );
 
 $flex-shrinks: (
   $flex-shrink-0: "0",
-  $flex-shrink-1: "1",
+  $flex-shrink-1: "1"
 );
 
 $flex-fills: (
-  $flex-fill: "fill",
+  $flex-fill: "fill"
 );
 // flexbox
 
@@ -274,7 +274,7 @@ $blurs: (
   $bf-blur-7: "7",
   $bf-blur-8: "8",
   $bf-blur-9: "9",
-  $bf-blur-10: "10",
+  $bf-blur-10: "10"
 );
 // filters
 
@@ -292,7 +292,7 @@ $positions: (
   $position-fixed: "fixed",
   $position-sticky: "sticky",
   $position-static: "static",
-  $position-unset: "unset",
+  $position-unset: "unset"
 );
 // positions
 
@@ -306,7 +306,7 @@ $directions: (
   $direction-top: "top",
   $direction-left: "left",
   $direction-right: "right",
-  $direction-bottom: "bottom",
+  $direction-bottom: "bottom"
 );
 // directions
 
@@ -823,7 +823,7 @@ $aligns: (
   $text-center: "center",
   $text-justify: "justify",
   $text-start: "start",
-  $text-end: "end",
+  $text-end: "end"
 );
 
 // font-variant
@@ -834,7 +834,7 @@ $fvp-normal: normal;
 $fv-positions: (
   $fvp-sub: "sub",
   $fvp-super: "super",
-  $fvp-normal: "normal",
+  $fvp-normal: "normal"
 );
 
 // font-weight
@@ -863,7 +863,7 @@ $weights: (
   $fw-900: "900",
   $fw-bold: "bold",
   $fw-bolder: "bolder",
-  $fw-lighter: "lighter",
+  $fw-lighter: "lighter"
 );
 
 // font-size
@@ -884,7 +884,7 @@ $sizes: (
   $fs-5: "5",
   $fs-6: "6",
   $fs-xs: "xs",
-  $fs-lg: "lg",
+  $fs-lg: "lg"
 );
 
 // line-height
@@ -907,7 +907,7 @@ $lineHeights: (
   $ln-xs: "xs",
   $ln-sm: "sm",
   $ln-md: "md",
-  $ln-lg: "lg",
+  $ln-lg: "lg"
 );
 // text
 
@@ -925,7 +925,7 @@ $vertical-aligns: (
   $va-middle: "middle",
   $va-bottom: "bottom",
   $va-text-bottom: "text-bottom",
-  $va-text-top: "text-top",
+  $va-text-top: "text-top"
 );
 // vertical-align
 
@@ -950,7 +950,7 @@ $align-items: (
   $align-items-stretch: "stretch",
   $align-items-self-start: "self-start",
   $align-items-self-end: "self-end",
-  $align-items-unset: "unset",
+  $align-items-unset: "unset"
 );
 
 // align-content
@@ -975,7 +975,7 @@ $align-contents: (
   $align-contents-space-around: "around",
   $align-contents-space-between: "between",
   $align-contents-space-evenly: "evenly",
-  $align-contents-unset: "unset",
+  $align-contents-unset: "unset"
 );
 
 // align-self
@@ -998,7 +998,7 @@ $align-selfs: (
   $align-selfs-stretch: "stretch",
   $align-selfs-self-start: "self-start",
   $align-selfs-self-end: "self-end",
-  $align-selfs-unset: "unset",
+  $align-selfs-unset: "unset"
 );
 // flexbox
 
@@ -1006,7 +1006,7 @@ $align-selfs: (
 $m-auto: auto;
 
 $margins: (
-  $m-auto: "auto",
+  $m-auto: "auto"
 );
 // margin
 
@@ -1018,7 +1018,7 @@ $rounded-circle: 50%;
 $roundeds: (
   $rounded: "",
   $rounded-pill: "pill",
-  $rounded-circle: "circle",
+  $rounded-circle: "circle"
 );
 // radius
 
@@ -1028,7 +1028,7 @@ $shadow-none: var(--shadow-none);
 
 $shadows: (
   $shadow-initial: "initial",
-  $shadow-none: "none",
+  $shadow-none: "none"
 );
 // shadows
 
@@ -1036,7 +1036,7 @@ $shadows: (
 $order-first: "first";
 
 $orders: (
-  $order-first: -1,
+  $order-first: -1
 );
 // order
 
@@ -1052,7 +1052,7 @@ $object-fits: (
   $object-fit-cover: cover,
   $object-fit-fill: fill,
   $object-fit-scale: scale,
-  $object-fit-none: none,
+  $object-fit-none: none
 );
 // object-fit
 
@@ -1068,7 +1068,7 @@ $object-positions: (
   $object-position-left: left,
   $object-position-right: right,
   $object-position-bottom: bottom,
-  $object-position-center: center,
+  $object-position-center: center
 );
 // object-position
 
@@ -1116,7 +1116,7 @@ $opacities: (
   $opacity-85: 0.85,
   $opacity-90: 0.9,
   $opacity-95: 0.95,
-  $opacity-100: 1,
+  $opacity-100: 1
 );
 // opacity
 
@@ -1132,7 +1132,7 @@ $overflows: (
   $overflow-auto: "auto",
   $overflow-scroll: "scroll",
   $overflow-visible: "visible",
-  $overflow-clip: "clip",
+  $overflow-clip: "clip"
 );
 // overflow
 
@@ -1146,7 +1146,7 @@ $aspect-ratios: (
   $aspect-ratio-1x1: "100%",
   $aspect-ratio-4x3: "75%",
   $aspect-ratio-16x9: "56.25%",
-  $aspect-ratio-21x9: "42.8571428571%",
+  $aspect-ratio-21x9: "42.8571428571%"
 );
 // ratio
 
@@ -1160,7 +1160,7 @@ $pointer-events: (
   $pointer-event-none: "none",
   $pointer-event-auto: "auto",
   $pointer-event-all: "all",
-  $pointer-event-fill: "fill",
+  $pointer-event-fill: "fill"
 );
 // pointer-events
 

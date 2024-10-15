@@ -31,10 +31,13 @@
             padding: 0;
             pointer-events: none;
             user-select: none;
+            backface-visibility: hidden;
+            overflow: hidden;
         }
     }
     &-video {
         & .preview-item-inner {
+            // create background for video items
             &::after {
                 content: "";
                 position: absolute;
@@ -46,6 +49,7 @@
                 background-color: rgba(var(--white-rgb), 0.5);
             }
         }
+        // icon for video items
         &::after {
             content: "";
             position: absolute;

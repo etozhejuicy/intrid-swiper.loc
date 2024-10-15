@@ -22,15 +22,17 @@ class Main {
         <section class="section section-content section-view">
             <div class="section-view-inner">
               <div class="section-view-tabs">
-                tabs...
+                <div class="swiper-container swiper-tabs">
+                  <div class="swiper-wrapper" tabs-list=""></div>
+                </div>
               </div>
               <div class="section-view-content">
-                <div class="swiper-container swiper-tabs">
+                <div class="swiper-container swiper-gallery">
                   <div class="swiper-wrapper" items-list=""></div>
                 </div>
               </div>
               <div class="section-view-navigate">
-                <div class="swiper-container swiper-navigate">
+                <div class="swiper-container swiper-thumbs">
                   <div class="swiper-wrapper" preview-list=""></div>
                   <div class="btn btn-primary btn-icon swiper-button-prev" style="--swiper-navigation-size: 2.5rem;width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
                     <i class="cl-icon-arrow-left"></i>
@@ -49,7 +51,25 @@ class Main {
 
   swipers() {
     if ($('.section-view-inner').length) {
-      var swiperTabs = new Swiper(".swiper-tabs", {
+      var swiperTabs = new Swiper('.swiper-tabs', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 0,
+        centeredSlides: false,
+        scrollbar: {
+          enabled: false,
+        },
+        pagination: {
+          enabled: false,
+        },
+        navigation: {
+          enabled: false,
+        },
+        allowTouchMove: true,
+      });
+
+      var swiperGallery = new Swiper(".swiper-gallery", {
+        direction: 'horizontal',
         rewind: true,
         slidesPerView: 1,
         spaceBetween: 20,
@@ -67,12 +87,14 @@ class Main {
         grabCursor: true,
       });
 
-      var swiperNavigate = new Swiper(".swiper-navigate", {
+      var swiperThumbs = new Swiper(".swiper-thumbs", {
+        direction: 'horizontal',
         rewind: true,
         slidesPerView: "auto",
+        touchRatio: 0.2,
         spaceBetween: 6,
         slideToClickedSlide: true,
-        centeredSlides: false,
+        centeredSlides: true,
         grid: {
           fill: "row",
         },
@@ -84,40 +106,46 @@ class Main {
         },
         navigation: {
           enabled: true,
-          nextEl: ".swiper-navigate .swiper-button-next",
-          prevEl: ".swiper-navigate .swiper-button-prev",
+          nextEl: ".swiper-thumbs .swiper-button-next",
+          prevEl: ".swiper-thumbs .swiper-button-prev",
         },
         allowTouchMove: true,
-        grabCursor: true,
       });
 
+
       setTimeout(function () {
-        if (swiperTabs.update || swiperNavigate.update) {
+        if (swiperGallery.update || swiperThumbs.update) {
           swiperTabs.update();
-          swiperNavigate.update();
-          swiperTabs.controller.control = swiperNavigate;
-          swiperNavigate.controller.control = swiperTabs;
-          swiperTabs.sync(swiperNavigate);
+          swiperGallery.update();
+          swiperThumbs.update();
+          swiperGallery.controller.control = swiperThumbs;
+          swiperThumbs.controller.control = swiperGallery;
+          swiperGallery.sync(swiperThumbs);
         }
       }, 500);
 
-      // var activeIndex = swiperTabs.activeIndex;
+      var activeIndex = swiperGallery.activeIndex;
 
-      // swiperNavigate.on('click', '.swiper-button-next', () => {
-      //   swiperNavigate.slideTo(activeIndex + 1);
-      // });
+      swiperThumbs.on('click', '.swiper-button-next', () => {
+        swiperThumbs.slideTo(activeIndex + 1);
+      });
 
 
-      // swiperNavigate.on('click', '.swiper-button-prev', () => {
-      //   swiperNavigate.slideTo(activeIndex - 1);
-      // });
+      swiperThumbs.on('click', '.swiper-button-prev', () => {
+        swiperThumbs.slideTo(activeIndex - 1);
+      });
 
-      // swiperNavigate.on('click', '.swiper-slide', () => {
+      swiperThumbs.on('click', '.swiper-slide', () => {
 
-      //   var clickedIndex = swiperNavigate.clickedIndex;
+        var clickedIndex = swiperThumbs.clickedIndex;
 
-      //   swiperNavigate.slideTo(clickedIndex);
-      // });
+        swiperThumbs.slideTo(clickedIndex);
+      });
+
+      window.addEventListener('resize', () => {
+        swiperGallery.onResize();
+        swiperThumbs.onResize();
+      });
 
     }
   }

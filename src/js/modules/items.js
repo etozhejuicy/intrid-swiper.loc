@@ -3,7 +3,7 @@ import videos from "../../json/items/videos.json";
 import interior from "../../json/items/interior.json";
 import content from "../../json/items/content.json";
 
-// models of items
+// model of items
 const itemsModel = [images, videos, interior, content];
 
 // flat array of items
@@ -14,14 +14,31 @@ items.forEach((item, index) => {
     item.id = index + 1;
 });
 
-// include items
-window.addEventListener('load', () => {
-    // loading items for view content area
-    const itemsList = document.querySelector("[items-list]");
-    const previewList = document.querySelector("[preview-list]");
+function createTabs(items, tabsList) {
+    const categories = [...new Set(items.map(item => item.type))];
 
+    const categoryItems = categories.map(category => items.find(item => item.type === category));
+
+    categoryItems.forEach((item) => {
+        const parentItem = document.createElement("div");
+        parentItem.className = "swiper-slide";
+        parentItem.setAttribute("swiper-item-type", item.type);
+
+        const tabElement = document.createElement("div");
+        tabElement.className = item.type !== "content" ? `tab` : `tab tab-type-content`;
+        tabElement.innerHTML = `
+            ${item.typeName}
+        `;
+
+        parentItem.appendChild(tabElement);
+        tabsList.appendChild(parentItem);
+    });
+}
+
+function createGalleryItems(items, itemsList) {
     items.forEach((item) => {
         const parentItem = document.createElement("div");
+
         parentItem.className = "swiper-slide";
         parentItem.innerHTML = `
             <div class="${item.type != "video" ? `card-photo` : `card-video`}" item-id="${item.id}">
@@ -31,9 +48,12 @@ window.addEventListener('load', () => {
 
         itemsList.appendChild(parentItem);
     });
+}
 
+function createPreviewItems(items, previewList) {
     items.forEach((item) => {
         const parentItem = document.createElement("div");
+
         parentItem.className = "swiper-slide";
         parentItem.innerHTML = `
             <div class="${item.type != "video" ? `preview-item` : `preview-item preview-item-video`}" item-id="${item.id}">
@@ -44,5 +64,17 @@ window.addEventListener('load', () => {
         `;
 
         previewList.appendChild(parentItem);
+
+        parentItem.setAttribute('swiper-slide-type', item.type);
     });
+}
+
+window.addEventListener('load', () => {
+    const tabsList = document.querySelector("[tabs-list]");
+    const itemsList = document.querySelector("[items-list]");
+    const previewList = document.querySelector("[preview-list]");
+
+    createTabs(items, tabsList);
+    createGalleryItems(items, itemsList);
+    createPreviewItems(items, previewList);
 });

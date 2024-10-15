@@ -3,24 +3,28 @@
         "title": "Заголовок видео",
         "link": "https://vk.com/video_ext.php?oid=-149996561&id=456250662&hd=2&autoplay=0",
         "brief": "Краткое описание видео",
-        "type": "video"
+        "type": "video",
+        "typeName": "Видео"
     },
     {
         "title": "Заголовок видео",
         "link": "https://vk.com/video_ext.php?oid=-149996561&id=456250662&hd=2&autoplay=0",
         "brief": "Краткое описание видео",
-        "type": "video"
+        "type": "video",
+        "typeName": "Видео"
     },
     {
         "title": "Заголовок видео",
         "link": "https://vk.com/video_ext.php?oid=-149996561&id=456250662&hd=2&autoplay=0",
         "brief": "Краткое описание видео",
-        "type": "video"
+        "type": "video",
+        "typeName": "Видео"
     },
     {
         "title": "Заголовок видео",
         "link": "https://vk.com/video_ext.php?oid=-149996561&id=456250662&hd=2&autoplay=0",
         "brief": "Краткое описание видео",
-        "type": "video"
+        "type": "video",
+        "typeName": "Видео"
     }
 ]

@@ -1,6 +1,7 @@
 @import "../parts/card-photo";
 @import "../parts/card-video";
 @import "../parts/preview-item";
+@import "../parts/tabs";
 
 :root {
     --section-view-gap: 1.5rem;
@@ -25,6 +26,7 @@ body {
         flex-direction: column;
         row-gap: var(--section-view-gap);
         column-gap: var(--section-view-gap);
+        flex: 1;
         max-height: 100%;
         max-height: 100%;
     }
@@ -42,7 +44,7 @@ body {
     }
 }
 
-.swiper-tabs {
+.swiper-gallery {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -63,10 +65,10 @@ body {
     }
 }
 
-.swiper-navigate {
+.swiper-thumbs {
     position: relative;
     z-index: 1;
-    padding: 0 calc(2.5rem * 1.5);
+    // padding: 0 calc(2.5rem * 1.5);
     & .swiper-slide,
     & swiper-slide {
         display: flex;
@@ -76,5 +78,16 @@ body {
         &-active {
             box-shadow: 0 0 0 0.125rem rgba(var(--white-rgb), 0.5);
         }
+    }
+}
+
+.swiper-tabs {
+    position: relative;
+    z-index: 1;
+    & .swiper-wrapper {
+        justify-content: stretch;
+    }
+    & .swiper-slide {
+        flex: 1;
     }
 }
