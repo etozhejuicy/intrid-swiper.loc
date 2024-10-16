@@ -200,7 +200,7 @@ class Items {
         allowTouchMove: true,
         on: {
           slideChange: function () {
-            let activeSlide = swiperGallery.slides[swiperGallery.activeIndex],
+            let activeSlide = swiperThumbs.slides[swiperThumbs.activeIndex],
               category = activeSlide.getAttribute("swiper-slide-type");
 
             tabs.forEach((tab) => {

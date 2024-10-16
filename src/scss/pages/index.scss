@@ -96,6 +96,10 @@ body {
     &:hover {
       --swiper-navigation-bg: rgba(var(--grey-600-rgb), 1);
     }
+    &:active,
+    &:focus {
+      --swiper-navigation-bg: rgba(var(--dark-rgb), 1);
+    }
     &::after {
       font-size: inherit;
       font-weight: 900;

@@ -10,3 +10,6 @@ import "lazysizes/plugins/object-fit/ls.object-fit";
 import "lazysizes/plugins/blur-up/ls.blur-up";
 
 lazySizes.cfg.blurupMode = "auto";
+
+// class
+import "./class/Lenis";
