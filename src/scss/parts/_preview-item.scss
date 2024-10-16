@@ -40,6 +40,7 @@
     & .preview-item-inner {
       & > * {
         z-index: -2;
+        pointer-events: none;
       }
       // create background for video items
       &::after {

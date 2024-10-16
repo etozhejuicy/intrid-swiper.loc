@@ -37,6 +37,7 @@ class Items {
     this.createGalleryItems(items, itemsList);
     this.createPreviewItems(items, previewList);
     this.swiper();
+    this.videoStart();
   }
 
   createTabs(items, tabsList) {
@@ -94,7 +95,9 @@ class Items {
       parentItem.className = "swiper-slide";
       parentItem.innerHTML = `
                   <div class="${
-                    item.type != "video" ? `card-photo` : `card-video`
+                    item.type != "video"
+                      ? `card-photo`
+                      : `card-video card-video-backface`
                   }" item-id="${item.id}">
                       ${
                         item.type != "video"
@@ -274,6 +277,20 @@ class Items {
         }
       }
     }
+  }
+
+  videoStart() {
+    let videos = document.querySelectorAll(".card-video");
+
+    videos.forEach((video) => {
+      video.addEventListener("click", (e) => {
+        $(e.currentTarget).removeClass("card-video-backface");
+      });
+
+      video.addEventListener("touchstart", (e) => {
+        $(e.currentTarget).removeClass("card-video-backface");
+      });
+    });
   }
 }
 
