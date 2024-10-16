@@ -38,6 +38,9 @@
   }
   &-video {
     & .preview-item-inner {
+      & > * {
+        z-index: -2;
+      }
       // create background for video items
       &::after {
         content: "";
