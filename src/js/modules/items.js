@@ -36,6 +36,7 @@ class Items {
     this.createTabs(items, tabsList);
     this.createGalleryItems(items, itemsList);
     this.createPreviewItems(items, previewList);
+    this.swiper();
   }
 
   createTabs(items, tabsList) {
@@ -133,8 +134,6 @@ class Items {
       previewList.appendChild(parentItem);
 
       parentItem.setAttribute("swiper-slide-type", item.type);
-
-      this.swiper();
     });
   }
 
@@ -148,6 +147,9 @@ class Items {
         slidesPerView: 1,
         spaceBetween: 20,
         centeredSlides: true,
+        speed: 500,
+        duration: 400,
+        keyboard: true,
         scrollbar: {
           enabled: false,
         },
@@ -183,6 +185,8 @@ class Items {
         spaceBetween: 6,
         slideToClickedSlide: true,
         centeredSlides: true,
+        speed: 500,
+        duration: 400,
         grid: {
           fill: "row",
         },
@@ -214,29 +218,21 @@ class Items {
         },
       });
 
+      // sync both sliders
+      swiperThumbs.controller.control = swiperGallery;
+      swiperGallery.controller.control = swiperThumbs;
+
+      // tabs init
+      if (swiperGallery.init) {
+        activeTab();
+      }
+
       setTimeout(() => {
-        if (swiperGallery.update || swiperThumbs.update) {
-          swiperGallery.update();
-          swiperThumbs.update();
-
-          let activeSlide = swiperThumbs.slides[swiperThumbs.activeIndex],
-            category = activeSlide.getAttribute("swiper-slide-type");
-
-          tabs.forEach((tab) => {
-            if (tab.getAttribute("swiper-item-type") == category) {
-              tab.classList.add("active");
-            } else {
-              tab.classList.remove("active");
-            }
-          });
-
-          swiperGallery.controller.control = swiperThumbs;
-          swiperThumbs.controller.control = swiperGallery;
-          // swiperGallery.sync(swiperThumbs);
-        }
+        swiperGallery.update();
+        swiperThumbs.update();
       }, 500);
 
-      // tabs part
+      // go to first slide on tab
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           let category = tab.getAttribute("swiper-item-type");
@@ -244,6 +240,19 @@ class Items {
           goToFirstSlide(category);
         });
       });
+
+      function activeTab() {
+        let activeSlide = swiperThumbs.slides[swiperThumbs.activeIndex],
+          category = activeSlide.getAttribute("swiper-slide-type");
+
+        tabs.forEach((tab) => {
+          if (tab.getAttribute("swiper-item-type") == category) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+      }
 
       function goToFirstSlide(category) {
         const slides = swiperGallery.slides;
