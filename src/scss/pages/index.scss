@@ -68,7 +68,6 @@ body {
 .swiper-thumbs {
   position: relative;
   z-index: 1;
-  // padding: 0 calc(2.5rem * 1.5);
   & .swiper-slide,
   & swiper-slide {
     display: flex;
@@ -113,28 +112,5 @@ body {
     align-items: center;
     justify-content: stretch;
     flex-wrap: nowrap;
-  }
-  & .tab {
-    width: 25%;
-    flex: 1 0 auto;
-    & .swiper-tab {
-      color: rgba(var(--white-rgb), 0.5);
-      border-bottom-width: 0.125rem;
-      border-bottom-style: solid;
-      border-bottom-color: rgba(var(--white-rgb), 0.5);
-      &-green {
-        color: var(--green);
-        border-bottom-color: rgba(var(--green-rgb), 1);
-      }
-    }
-    &:is(.active) {
-      & .swiper-tab {
-        color: rgba(var(--white-rgb), 1);
-        border-bottom-color: rgba(var(--white-rgb), 1);
-      }
-    }
-    & .swiper-tab {
-      padding: 0.625rem 0.25rem;
-    }
   }
 }

@@ -4,6 +4,7 @@ import Swiper from "swiper/bundle";
 // vendor styles
 import "../../../node_modules/swiper/swiper.css";
 
+// include json
 import images from "../../json/items/images.json";
 import videos from "../../json/items/videos.json";
 import interior from "../../json/items/interior.json";
@@ -141,25 +142,7 @@ class Items {
     const tabs = document.querySelectorAll("[tabs-list] [swiper-item-type]");
 
     if ($(".section-view-inner").length) {
-      //   var swiperTabs = new Swiper(".swiper-tabs", {
-      //     direction: "horizontal",
-      //     slidesPerView: 4,
-      //     spaceBetween: 0,
-      //     centeredSlides: false,
-      //     slideToClickedSlide: true,
-      //     scrollbar: {
-      //       enabled: false,
-      //     },
-      //     pagination: {
-      //       enabled: false,
-      //     },
-      //     navigation: {
-      //       enabled: false,
-      //     },
-      //     allowTouchMove: false,
-      //   });
-
-      var swiperGallery = new Swiper(".swiper-gallery", {
+      let swiperGallery = new Swiper(".swiper-gallery", {
         direction: "horizontal",
         rewind: true,
         slidesPerView: 1,
@@ -192,7 +175,7 @@ class Items {
         },
       });
 
-      var swiperThumbs = new Swiper(".swiper-thumbs", {
+      let swiperThumbs = new Swiper(".swiper-thumbs", {
         direction: "horizontal",
         rewind: true,
         slidesPerView: "auto",
@@ -231,7 +214,7 @@ class Items {
         },
       });
 
-      setTimeout(function () {
+      setTimeout(() => {
         if (swiperGallery.update || swiperThumbs.update) {
           swiperGallery.update();
           swiperThumbs.update();
@@ -245,49 +228,31 @@ class Items {
       // tabs part
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
-          let slides = swiperGallery.slides,
-            category = tab.getAttribute("swiper-item-type"),
-            firstSlideIndex = -1;
+          let category = tab.getAttribute("swiper-item-type");
 
-          slides.forEach((slide, index) => {
-            if (slide.getAttribute("swiper-slide-type") == category) {
-              firstSlideIndex = index;
-
-              return;
-            }
-          });
-
-          if (firstSlideIndex !== -1) {
-            swiperGallery.slideTo(firstSlideIndex);
-          } else {
-            console.log("No slides found for this category.");
-          }
+          goToFirstSlide(category);
         });
       });
 
-      //   don't remove this part
-      //   swiperThumbs.on("click", ".swiper-button-next", () => {
-      //     let activeIndex = swiperGallery.activeIndex;
+      function goToFirstSlide(category) {
+        const slides = swiperGallery.slides;
 
-      //     swiperThumbs.slideTo(activeIndex + 1);
-      //   });
+        let firstSlideIndex = -1;
 
-      //   swiperThumbs.on("click", ".swiper-button-prev", () => {
-      //     let activeIndex = swiperGallery.activeIndex;
+        for (let i = 0; i < slides.length; i++) {
+          const slide = slides[i];
 
-      //     swiperThumbs.slideTo(activeIndex - 1);
-      //   });
+          if (slide.getAttribute("swiper-slide-type") == category) {
+            firstSlideIndex = i;
 
-      //   swiperThumbs.on("click", ".swiper-slide", () => {
-      //     let clickedIndex = swiperThumbs.clickedIndex;
+            break;
+          }
+        }
 
-      //     swiperThumbs.slideTo(clickedIndex);
-      //   });
-
-      $(window).on("resize", () => {
-        swiperGallery.onResize();
-        swiperThumbs.onResize();
-      });
+        if (firstSlideIndex !== -1) {
+          swiperGallery.slideTo(firstSlideIndex);
+        }
+      }
     }
   }
 }

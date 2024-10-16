@@ -20,3 +20,28 @@
     height: 100%;
   }
 }
+
+.tab {
+  width: 25%;
+  flex: 1 0 auto;
+  & .swiper-tab {
+    color: rgba(var(--white-rgb), 0.5);
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(var(--white-rgb), 0.5);
+    transition: border-color 0.4s ease, color 0.4s ease;
+    &-green {
+      color: var(--green);
+      border-bottom-color: rgba(var(--green-rgb), 1);
+    }
+  }
+  &:is(.active) {
+    & .swiper-tab {
+      color: rgba(var(--white-rgb), 1);
+      border-bottom-color: rgba(var(--white-rgb), 1);
+    }
+  }
+  & .swiper-tab {
+    padding: 0.625rem 0.25rem;
+  }
+}
