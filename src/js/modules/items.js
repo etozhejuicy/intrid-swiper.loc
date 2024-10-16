@@ -219,6 +219,17 @@ class Items {
           swiperGallery.update();
           swiperThumbs.update();
 
+          let activeSlide = swiperThumbs.slides[swiperThumbs.activeIndex],
+            category = activeSlide.getAttribute("swiper-slide-type");
+
+          tabs.forEach((tab) => {
+            if (tab.getAttribute("swiper-item-type") == category) {
+              tab.classList.add("active");
+            } else {
+              tab.classList.remove("active");
+            }
+          });
+
           swiperGallery.controller.control = swiperThumbs;
           swiperThumbs.controller.control = swiperGallery;
           // swiperGallery.sync(swiperThumbs);
