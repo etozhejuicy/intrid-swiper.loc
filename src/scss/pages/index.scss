@@ -11,7 +11,7 @@
 
 body {
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--dark);
 }
 
 .section-view {
@@ -95,7 +95,7 @@ body {
     appearance: none;
     transition: 0.35s ease;
     &:hover {
-      --swiper-navigation-bg: rgba(var(--grey-400-rgb), 1);
+      --swiper-navigation-bg: rgba(var(--grey-600-rgb), 1);
     }
     &::after {
       font-size: inherit;
@@ -104,24 +104,33 @@ body {
   }
 }
 
-.swiper-tabs {
+.tabs {
   position: relative;
   z-index: 1;
-  & .swiper-wrapper {
-    justify-content: space-between;
+  &-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: nowrap;
   }
-  & .swiper-slide {
+  & .tab {
     width: 25%;
     flex: 1 0 auto;
-    &-active {
+    & .swiper-tab {
+      color: rgba(var(--white-rgb), 0.5);
+      border-bottom-width: 0.125rem;
+      border-bottom-style: solid;
+      border-bottom-color: rgba(var(--white-rgb), 0.5);
+      &-green {
+        color: var(--green);
+        border-bottom-color: rgba(var(--green-rgb), 1);
+      }
+    }
+    &:is(.active) {
       & .swiper-tab {
-        border-bottom-width: 0.125rem;
-        border-bottom-style: solid;
-        border-bottom-color: var(--white);
-        &-green {
-          color: var(--green);
-          border-bottom-color: var(--green);
-        }
+        color: rgba(var(--white-rgb), 1);
+        border-bottom-color: rgba(var(--white-rgb), 1);
       }
     }
     & .swiper-tab {
