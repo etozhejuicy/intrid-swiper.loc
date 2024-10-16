@@ -84,7 +84,7 @@ body {
     --swiper-navigation-size: var(--preview-item-size);
     --swiper-navigation-color: var(--white);
     --swiper-navigation-bg: rgba(var(--grey-900-rgb), 1);
-    width: 2.5rem;
+    width: 1.5rem;
     height: var(--preview-item-size);
     background-color: var(--swiper-navigation-bg);
     border-radius: var(--preview-item-rounded);
@@ -101,7 +101,7 @@ body {
       --swiper-navigation-bg: rgba(var(--dark-rgb), 1);
     }
     &::after {
-      font-size: inherit;
+      font-size: 1rem;
       font-weight: 900;
     }
   }
